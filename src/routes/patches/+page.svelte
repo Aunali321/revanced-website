@@ -77,19 +77,11 @@
 				.toLowerCase();
 			// Update search URL params
 			// must use history.pushState instead of goto(), as goto() unselects the search bar
-			const url = new URL(window.location.href);
-			url.pathname = '/patches';
-
-			const params = new URLSearchParams();
-			if (selectedPkg) {
-				params.set('pkg', selectedPkg);
-			}
-			if (searchTerm) {
-				params.set('s', searchTerm);
-			}
-
-			url.search = params.toString();
-			window.history.pushState(null, '', url.toString());
+			window.history.pushState(
+				null,
+				'',
+				`${window.location.href.split('?')[0]}${searchTerm ? '?s=' + searchTerm : ''}`
+			);
 		}, 500);
 	};
 </script>
@@ -179,7 +171,7 @@
 	}
 
 	.search {
-		padding-top: 5rem;
+		padding-top: 6.5rem;
 		padding-bottom: 1.25rem;
 		background-color: var(--grey-seven);
 	}
@@ -228,10 +220,6 @@
 
 		aside {
 			display: none;
-		}
-
-		.search {
-			padding-top: 4.5rem;
 		}
 
 		.patches-container {
