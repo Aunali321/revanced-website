@@ -82,7 +82,7 @@
 					<Navigation queryKey="repositories" href="/contributors">Contributors</Navigation>
 				</div>
 			</div>
-			<div id="socials">
+			<div id="secondary-navigation">
 				<SocialButton src="github" href="https://revanced.app/github" />
 				<SocialButton src="discord" href="https://revanced.app/discord" />
 				<SocialButton src="reddit" href="https://revanced.app/reddit" />
@@ -90,7 +90,7 @@
 			</div>
 		</div>
 	{/key}
-	<div id="secondary-navigation">
+	<div id="settings">
 		<!-- <SocialButton src="github" href="https://revanced.app/github" />
 		<SocialButton src="discord" href="https://revanced.app/discord" />
 		<SocialButton src="reddit" href="https://revanced.app/reddit" />
@@ -197,7 +197,7 @@
 		top: 0;
 		display: flex;
 		gap: 4rem;
-		justify-content: space-between !important;
+		justify-content: space-between;
 		align-items: center;
 		padding: 1rem 1.5rem 1rem 1rem;
 		border-radius: 1.25rem;
@@ -216,6 +216,10 @@
 		color: white;
 	}
 
+	#secondary-navigation {
+		display: none;
+	}
+
 	@media screen and (max-width: 768px) {
 		nav {
 			/* to match the contributors page */
@@ -227,7 +231,8 @@
 			/* to match the margin-inline: auto; on contributors page */
 			margin: 1rem 5%;
 		}
-		#socials {
+		#secondary-navigation {
+			align-items: center;
 			display: flex;
 			gap: 1rem;
 		}
@@ -236,23 +241,19 @@
 		}
 	}
 
-	#socials {
-		display: none;
-	}
-
 	#main-navigation,
-	#secondary-navigation {
+	#settings {
 		align-items: center;
 		display: flex;
 		gap: 1rem;
 	}
 
+	#settings,
 	#secondary-navigation {
 		justify-content: flex-end;
 	}
 
 	a {
-		gap: 1rem;
 		display: flex;
 		align-items: center;
 		text-decoration: none;
@@ -260,6 +261,7 @@
 
 	img {
 		height: 36px;
+		margin-right: 0.75rem;
 	}
 
 	.nav-buttons {
@@ -274,10 +276,10 @@
 
 	.overlay {
 		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		top: -1rem;
+		left: -5.5%;
+		width: 100dvw;
+		height: 100dvh;
 		background-color: rgba(0, 0, 0, 0.5);
 		z-index: 88;
 	}
@@ -304,12 +306,12 @@
 		.nav-wrapper {
 			flex-direction: column;
 			gap: 0.5rem;
-			height: 100%;
+			height: calc(100dvh - 2rem);
 			margin: 0 auto;
 			position: fixed;
-			width: 20rem;
+			width: 17rem;
 			top: 0px;
-			border-radius: 0px 24px 24px 0px;
+			border-radius: 1.25rem;
 			left: 0px;
 			background-color: var(--grey-seven);
 			padding: 1rem;
@@ -321,18 +323,10 @@
 			display: none !important;
 		}
 
-		nav {
-			justify-content: normal;
-		}
-
 		.nav-buttons {
 			flex-direction: column;
 			gap: 0.5rem;
 			width: 100%;
-		}
-
-		#secondary-navigation {
-			z-index: 100;
 		}
 	}
 
