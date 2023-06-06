@@ -167,15 +167,11 @@
 		text-underline-offset: 0rem;
 	}
 
-	li {
-		padding: 0.5rem 0;
-	}
-
 	li:first-of-type {
-		padding-top: 0;
+		padding-bottom: 0.5rem;
 	}
 
-	li:hover a {
+	a:hover {
 		text-decoration: underline;
 		text-decoration-style: wavy;
 		text-underline-offset: 0.25rem;
