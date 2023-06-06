@@ -167,11 +167,16 @@
 		text-underline-offset: 0rem;
 	}
 
-	a:hover {
+	li {
+		padding: 0.5rem 0;
+	}
+
+	li:hover a {
 		text-decoration: underline;
 		text-decoration-style: wavy;
 		text-underline-offset: 0.25rem;
 		text-decoration-color: var(--accent-color-two);
+		translate: 0.25rem 0;
 		color: var(--accent-color-two);
 	}
 
