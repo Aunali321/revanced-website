@@ -51,7 +51,7 @@
 
 	.button-filled {
 		background-color: var(--accent-color);
-		color: var(--grey-four);
+		color: var(--bg-color);
 	}
 	.button-tonal {
 		background-color: var(--grey-two);
